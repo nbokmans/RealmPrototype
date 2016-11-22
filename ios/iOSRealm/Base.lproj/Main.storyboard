@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WOJ-KG-1O8">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Weather-->
+        <scene sceneID="h1a-Nu-j53">
+            <objects>
+                <tableViewController id="pED-dw-NGz" customClass="WeatherTableViewController" customModule="iOSRealm" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="f86-dy-Ypr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="WeatherTableViewCell" rowHeight="60" id="z30-1V-g2F" customClass="WeatherTableViewCell" customModule="iOSRealm" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="60"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="z30-1V-g2F" id="joI-6C-V56">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="02L-5K-b2T">
+                                            <rect key="frame" x="16" y="19" width="568" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="02L-5K-b2T" firstAttribute="leading" secondItem="joI-6C-V56" secondAttribute="leadingMargin" constant="8" id="86A-FL-V1g"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="02L-5K-b2T" secondAttribute="trailing" constant="8" id="L28-Fj-LyW"/>
+                                        <constraint firstItem="02L-5K-b2T" firstAttribute="top" secondItem="joI-6C-V56" secondAttribute="topMargin" constant="11" id="fE4-8k-FB2"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="weather" destination="02L-5K-b2T" id="L2T-1h-tur"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="pED-dw-NGz" id="mJq-pz-QHm"/>
+                            <outlet property="delegate" destination="pED-dw-NGz" id="StK-WW-ZVt"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Weather" id="4hM-0O-PC7">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="SdF-X4-MPl">
+                            <connections>
+                                <segue destination="ryo-g4-9su" kind="show" id="PVQ-gC-iq2"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NCH-aH-YOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="690" y="-398"/>
+        </scene>
+        <!--Edit Weather View Controller-->
+        <scene sceneID="VRQ-we-PHX">
+            <objects>
+                <viewController id="ryo-g4-9su" customClass="EditWeatherViewController" customModule="iOSRealm" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="I2s-wA-2lO"/>
+                        <viewControllerLayoutGuide type="bottom" id="dh9-TP-Qcc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pcy-W8-Ygb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dcP-hp-mzo">
+                                <rect key="frame" x="237" y="72" width="127" height="30"/>
+                                <state key="normal" title="Add weather entry"/>
+                                <connections>
+                                    <action selector="addWeather:" destination="ryo-g4-9su" eventType="touchUpInside" id="Bee-pP-vyn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kH8-cI-FXK">
+                                <rect key="frame" x="248" y="110" width="104" height="30"/>
+                                <state key="normal" title="Clear database"/>
+                                <connections>
+                                    <action selector="clearDatabase:" destination="ryo-g4-9su" eventType="touchUpInside" id="TjS-4c-uSh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kH8-cI-FXK" firstAttribute="leading" secondItem="pcy-W8-Ygb" secondAttribute="leadingMargin" constant="228" id="2n6-1R-T4e"/>
+                            <constraint firstItem="dcP-hp-mzo" firstAttribute="top" secondItem="I2s-wA-2lO" secondAttribute="bottom" constant="8" id="Aoi-Lg-1GY"/>
+                            <constraint firstItem="dcP-hp-mzo" firstAttribute="leading" secondItem="pcy-W8-Ygb" secondAttribute="leadingMargin" constant="217" id="JzS-hQ-RNd"/>
+                            <constraint firstItem="kH8-cI-FXK" firstAttribute="top" secondItem="dcP-hp-mzo" secondAttribute="bottom" constant="8" id="jfd-RR-1Cb"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FnR-pb-EC7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1366" y="-398"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="HkT-ml-BTh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WOJ-KG-1O8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2dV-k7-BrR">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pED-dw-NGz" kind="relationship" relationship="rootViewController" id="pie-6j-zz5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFk-gv-jzK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-122" y="-398"/>
+        </scene>
+    </scenes>
+</document>
