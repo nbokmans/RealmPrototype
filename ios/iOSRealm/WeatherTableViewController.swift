@@ -13,8 +13,8 @@ class WeatherTableViewController : UITableViewController {
     
     let authURL: NSURL = NSURL(string: "http://185.14.186.238:9080")!
     let realmURL: NSURL = NSURL(string: "realm://185.14.186.238:9080/~/newRealm")!
-    let username = "robaben11@gmail.com"
-    let password = "ditisrealm"
+    let username = ""
+    let password = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()

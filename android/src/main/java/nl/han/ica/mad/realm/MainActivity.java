@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity implements SyncUser.Callback
     private RealmResults<Weather> weatherItems;
 
     public void attemptLogin(boolean create){
-        SyncCredentials credentials = SyncCredentials.usernamePassword("robaben11@gmail.com","ditisrealm",create);
+        SyncCredentials credentials = SyncCredentials.usernamePassword("u","p",create);
         SyncUser.loginAsync(credentials,WeatherApplication.AUTH_URL, this);
     }
 
